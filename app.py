@@ -1,9 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 import processor
 
-
 app = Flask(__name__)
-
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -20,7 +18,6 @@ def chatbotResponse():
         response = processor.chatbot_response(the_question)
 
     return jsonify({"response": response })
-
 
 
 if __name__ == '__main__':
